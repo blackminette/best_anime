@@ -6,7 +6,7 @@ base_url = "https://api.jikan.moe/v4"
 anime_data = []
 character_data = []
 
-max_pages = 1000
+max_pages = 300
 
 for page in range(1, max_pages + 1):
     print(f"Récupération de la page {page}")
@@ -19,6 +19,20 @@ for page in range(1, max_pages + 1):
     for anime in result["data"]:
         aid = anime["mal_id"]
         status = anime.get("status")  # "Finished", "Airing", "Upcoming"
+        studios = ", ".join([s["name"] for s in anime.get("studios", [])])
+
+        if status == "Finished":
+            episodes = anime["episodes"]
+        elif status == "Airing":
+            episodes = None  # ou "in progress"
+        elif status == "Upcoming":
+            episodes = 0  # ou "not aired yet"
+        else:
+            episodes = anime["episodes"]
+
+        if not studios:
+            continue
+    
         anime_data.append({
             "anime_id": aid,
             "title": anime["title"],
@@ -27,7 +41,7 @@ for page in range(1, max_pages + 1):
             "episodes": anime["episodes"],
             "year": anime.get("year"),
             "genres": ", ".join([g["name"] for g in anime.get("genres", [])]),
-            "studios": ", ".join([s["name"] for s in anime.get("studios", [])]),
+            "studios": studios,
             "status": status
         })
 
