@@ -1,3 +1,5 @@
+Je précise que j'ai désactiver copilot de mon vscode avant de commencer mon tp.
+
 Ma 1er idée quand j'ai entendu le sujet à été d'aller sur le site https://myanimelist.net,
 ils ont une gigantesque, si ce n'est la plus grande, base de données anime publique.
 Malheureusement, il ne propose pas de dataset complet. J'ai alors demandé à l'IA si c'était possible de les récupérer et si oui comment.
@@ -9,3 +11,16 @@ J'ai opté pour la 2e solution, j'ai alors écris avec l'IA (pour m'aider pour l
 
 Après avoir découvert mon dataset, j'ai décidé de modifié le script donner par l'IA pour récupéré aussi le status de l'anime pour facilité le traitement de la colonne épisode et ne pas récupéré les données qui n'ont pas de valeur dans la colonne studio.
 J'ai décider de ne pas prendre l'année finalement parce qu'il manque beaucoup trop de données pour traiter quoi que se soit.
+J'ai modifié une dernière fois get_dataset.py pour avoir un bon dataset de base, je ne le modiefierai plus.
+J'ai donc décider de prendre:
+ - id : indispensable pour pouvoir le comparer avec d'autre dataset
+ - title : indispensable pour reconnaitre l'anime dans la liste
+ - score : la note moyenne donné par les utilisateurs de myanimelist
+ - scored_by : le nombre total de note par anime
+ - members : le nombre de personne qui sont membres de la commenauté de l'anime en question
+ - favorites : le nombre de personnes qui ont mis cette anime en favoris
+ - episodes : le nombre total d'episode (0 si pas commencé, "None" si en cours)
+ - genres : pouvoir comparer par genre peut être interessant
+ - demographics : le public cible de l'anime, comme pour le genre ça peut être interessant
+ - studios : pour comparer par studio
+ - status : savoir si il est terminé, en cours ou pas encore commencé peut être utile
