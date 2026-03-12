@@ -1,0 +1,8 @@
+Ma 1er idée quand j'ai entendu le sujet à été d'aller sur le site https://myanimelist.net,
+ils ont une gigantesque, si ce n'est la plus grande, base de données anime publique.
+Malheureusement, il ne propose pas de dataset complet. J'ai alors demandé à l'IA si c'était possible de les récupérer et si oui comment.
+Au fur et à mesure de mes recherches j'ai alors eu plusieurs solution:
+1er solution: prendre un (ou plusieurs) dataset sur kaggle
+2e solution: utiliser l'api de myanimelist pour faire mon propre dataset
+
+J'ai opté pour la 2e solution, j'ai alors écris avec l'IA (pour m'aider pour la requète api) le script get_dataset.py qui utilise alors l'api jikan.
