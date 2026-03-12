@@ -6,7 +6,7 @@ base_url = "https://api.jikan.moe/v4"
 anime_data = []
 character_data = []
 
-max_pages = 2000
+max_pages = 1000
 
 for page in range(1, max_pages + 1):
     print(f"Récupération de la page {page}")
