@@ -39,7 +39,6 @@ for page in range(1, max_pages + 1):
             "score": anime["score"],
             "type": anime["type"],
             "episodes": anime["episodes"],
-            "year": anime.get("year"),
             "genres": ", ".join([g["name"] for g in anime.get("genres", [])]),
             "studios": studios,
             "status": status

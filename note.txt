@@ -7,4 +7,5 @@ Au fur et à mesure de mes recherches j'ai alors eu plusieurs solution:
 
 J'ai opté pour la 2e solution, j'ai alors écris avec l'IA (pour m'aider pour la requète api) le script get_dataset.py qui utilise alors l'api jikan.
 
-Après avoir découvert mon dataset, j'ai décidé de modifié le script donner par l'IA pour récupéré aussi le status de l'anime pour facilité le traitement de la colonne épisode et ne pas récupéré les données qui n'ont pas de valeur dans la colonne studio
+Après avoir découvert mon dataset, j'ai décidé de modifié le script donner par l'IA pour récupéré aussi le status de l'anime pour facilité le traitement de la colonne épisode et ne pas récupéré les données qui n'ont pas de valeur dans la colonne studio.
+J'ai décider de ne pas prendre l'année finalement parce qu'il manque beaucoup trop de données pour traiter quoi que se soit.
