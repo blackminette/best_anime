@@ -31,7 +31,7 @@ conditions = [
     (df["score"] < 8) & (df["score"] >= 5)
 ]
 
-choices = [20, 10, 5]
+choices = [50, 10, 5]
 
 df["bonus_score_multiplier"] = np.select(conditions, choices, default=1)
 
@@ -40,8 +40,8 @@ df["bonus_score_multiplier"] = np.select(conditions, choices, default=1)
 df["score_final"] = (
     0.5 * df["score"] * df["bonus_score_multiplier"] + 
     0.1 * (df["scored_by"] / 10000) +
-    0.1 * df["favorites"] / 100 +
-    0.2 * df["members"] / 1000
+    0.2 * df["favorites"] / 10 +
+    0.2 * df["members"] / 10000
     )
 
 df["score_final"] = round(df["score_final"], 2)
@@ -49,9 +49,15 @@ df["score_final"] = round(df["score_final"], 2)
 df = df.sort_values("score_final", ascending=False)
 
 # ==== Rendu html =====
+condition = (
+    (df["demographics"].apply(lambda x: "Seinen" in x))
+    )
+
+colonne = ["score_final", "title", "score", "scored_by", "members", "favorites", "episodes", "genres", "demographics", "studios"]
+
 app = Flask(__name__)
 @app.route("/")
 def accueil():
-    table = df[["score_final", "title", "score", "scored_by", "members", "favorites", "episodes", "genres", "demographics", "studios"]].head(10).to_html(index=False)
+    table = df.loc[:, colonne].head(10).to_html(index=False)
     return render_template("index.html", table=table)
 app.run(debug=True)
