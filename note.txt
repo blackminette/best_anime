@@ -27,3 +27,6 @@ J'ai donc décider de prendre:
 
 
 Pour le nettoyage des données, j'ai changé le type de "episodes" pour le passé de "float" à "int64", puis j'ai supprimé les données qui n'avait pas de "score" pour ne pas fausser les données en mettant la moyenne et j'ai supprimé les doublons.
+
+Je me suis renseigné d'abord manuellement puis finalement avec l'ia pour trouver comment je pourrais faire un rendu sur une page html.
+Je pouvais sois générer du html directement avec python ou utiliser la librairie flask donc j'ai utiliser flask qui permet de préparer le template html à part ce qui m'évitera d'écrire toute la page html dans mon script python.
