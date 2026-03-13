@@ -34,3 +34,14 @@ J'ai utiliser l'IA pour générer un css simple pour améliorer le rendu.
 
 J'ai utiliser l'IA parce que les différentes méthode que je connaissais pour transformer un str en list ne fonctionner pas sans se compliquer inutilement la tâche,
 donc afin de transformer les colonnes genres, demographics et studios en list j'ai utiliser la librairie ast.
+
+J'ai commencé à réfléchir à calculer un score pour chaque animé je me suis dit que j'allais une grande importance au score donné par les utilisateurs, comme les autres paramètre sont de trés grand nombre j'ai voulu donner un bonus, j'ai alors fais un if elif avant de tomber sur une erreur:
+if df["score"] >= 9:
+    df["bonus_score_mulriplier"] = 20
+elif (df["score"] < 9) & (df["score"] >= 8):
+    df["bonus_score_mulriplier"] = 10
+elif (df["score"] < 8) & (df["score"] >= 5):
+    df["bonus_score_mulriplier"] = 5
+else:
+    df["bonus_score_mulriplier"] = 1
+Après m'être renseigné je me suis rendu compte que j'étais en train de comparer une liste de booléen à un nombre et ait alors demandé à une IA si il y avait une méthode existante pour faire la même chose et ait alors utilisé numpy
