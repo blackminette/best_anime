@@ -31,3 +31,6 @@ Pour le nettoyage des données, j'ai changé le type de "episodes" pour le pass�
 Je me suis renseigné d'abord manuellement puis finalement avec l'ia pour trouver comment je pourrais faire un rendu sur une page html.
 Je pouvais sois générer du html directement avec python ou utiliser la librairie flask donc j'ai utiliser flask qui permet de préparer le template html à part ce qui m'évitera d'écrire toute la page html dans mon script python.
 J'ai utiliser l'IA pour générer un css simple pour améliorer le rendu.
+
+J'ai utiliser l'IA parce que les différentes méthode que je connaissais pour transformer un str en list ne fonctionner pas sans se compliquer inutilement la tâche,
+donc afin de transformer les colonnes genres, demographics et studios en list j'ai utiliser la librairie ast.

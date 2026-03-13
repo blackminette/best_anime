@@ -1,5 +1,6 @@
 import pandas as pd
 from flask import Flask, render_template
+import ast
 
 # Charger le dataset
 df = pd.read_csv("anime_dataset.csv")
@@ -15,8 +16,11 @@ df = df.drop_duplicates()
 
 df["episodes"] = df["episodes"].fillna(0)
 
-print(df.dtypes)
+df["genres"] = df["genres"].apply(ast.literal_eval)
+df["demographics"] = df["demographics"].apply(ast.literal_eval)
+df["studios"] = df["studios"].apply(ast.literal_eval)
 
+print(df.dtypes)
 
 # ==== Rendu html =====
 app = Flask(__name__)
