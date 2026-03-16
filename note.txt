@@ -47,3 +47,5 @@ else:
 Après m'être renseigné je me suis rendu compte que j'étais en train de comparer une liste de booléen à un nombre et ait alors demandé à une IA si il y avait une méthode existante pour faire la même chose et ait alors utilisé numpy
 
 J'ai améliorer le script du rendu pour pouvoir mettre des conditions, j'ai utiliser l'IA pour savoir quelle méthode utiliser (df.loc).
+
+Pour le score final, j'ai décider que la note moyenne serait la plus importante (évidement) avec un bonus en fonction de celui ci, ensuite j'ai décidé de mettre le nombre de note et favoris au même niveau aprés les avoir à peu prés mis au même niveau en les divisant et pour finir les 10 derniers pourcents sont le nombre de membres de la communauté de cet anime.

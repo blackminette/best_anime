@@ -38,10 +38,10 @@ df["bonus_score_multiplier"] = np.select(conditions, choices, default=1)
 
 # Score finale
 df["score_final"] = (
-    0.5 * df["score"] * df["bonus_score_multiplier"] + 
-    0.1 * (df["scored_by"] / 10000) +
-    0.2 * df["favorites"] / 10 +
-    0.2 * df["members"] / 10000
+    0.4 * df["score"] * df["bonus_score_multiplier"] + 
+    0.25 * (df["scored_by"] / 10000) +
+    0.25 * df["favorites"] / 100 +
+    0.1 * df["members"] / 100000
     )
 
 df["score_final"] = round(df["score_final"], 2)
